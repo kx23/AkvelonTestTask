@@ -24,7 +24,7 @@ namespace AkvelonTestTask
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string con = "Server=(localdb)\\mssqllocaldb;Database=AkvelonTestTaskDB;Trusted_Connection=True;"; // db conection string
+            string con = "Data Source = sql.bsite.net\\MSSQL2016; Initial Catalog = artwrkml_AkvelonTestTask; User ID = artwrkml_AkvelonTestTask; Password = 11111111; Persist Security Info = True; "; // db conection string
             services.AddScoped<ITasksRepository, EFTasksRepository>();
             services.AddScoped<IProjectsRepository, EFProjectsRepository>();
             services.AddScoped<DataManager>();
@@ -69,7 +69,7 @@ namespace AkvelonTestTask
                 endpoints.MapControllers();
             });
             app.UseSwagger();
-            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "PlaceInfo Services"));
+            app.UseSwaggerUI(options => options.SwaggerEndpoint("/artwrkml/swagger/v1/swagger.json", "PlaceInfo Services"));
             SeedData.EnsurePopulatedAsync(app);
         }
     }
