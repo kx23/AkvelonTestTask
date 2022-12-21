@@ -24,7 +24,7 @@ namespace AkvelonTestTask
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string con = "Server=(localdb)\\mssqllocaldb;Database=AkvelonTestTaskDB;Trusted_Connection=True;";
+            string con = "Server=(localdb)\\mssqllocaldb;Database=AkvelonTestTaskDB;Trusted_Connection=True;"; // db conection string
             services.AddScoped<ITasksRepository, EFTasksRepository>();
             services.AddScoped<IProjectsRepository, EFProjectsRepository>();
             services.AddScoped<DataManager>();

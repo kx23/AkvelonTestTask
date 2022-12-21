@@ -16,7 +16,7 @@ namespace AkvelonTestTask
         {
             AppDbContext context = app.ApplicationServices
             .CreateScope().ServiceProvider.GetRequiredService<AppDbContext>();
-            context.Database.EnsureDeleted(); 
+            //context.Database.EnsureDeleted();  // uncomment to erase db
 
             if (context.Database.GetPendingMigrations().Any())
             {
